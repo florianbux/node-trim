@@ -5,15 +5,11 @@ const {
 module.exports.formatting = (str) => {
     str = removeSymbols(str);
     if (str === '') {
-        console.log(`There's something wrong with your Input.`);
-        showHelp();
-        return;
+        return showHelp(`There's something wrong with your Input.`);
     }
     str = str.trim();
-    while (str.includes('  ')) {
-        str = str.split('  ').join(' ');
-    }
-    console.log(capitalizeInitial(str));
+    while (str.includes('  ')) str = str.split('  ').join(' ');
+    return capitalizeInitial(str);
 }
 
 capitalizeInitial = (str) => {
@@ -28,5 +24,5 @@ capitalizeInitial = (str) => {
 }
 
 removeSymbols = (str) => {
-   return str.replace(/[^a-zA-Z ]/g, "");
+    return str.replace(/[^a-zA-Z ]/g, "");
 }

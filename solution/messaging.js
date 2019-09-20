@@ -1,5 +1,5 @@
-module.exports.showHelp = () => {
-    console.log(`
+module.exports.showHelp = (str = '') => {
+    let help = `${str}
     How to use this program:
 
     1. When you input a new string 
@@ -14,5 +14,6 @@ module.exports.showHelp = () => {
     letter inside the wrong place of 
     your string the program will 
     sanitize it.
-    `)
+    `;
+    return help;
 }
